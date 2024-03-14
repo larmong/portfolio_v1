@@ -1,10 +1,13 @@
 import {useEffect, useRef} from "react";
-import {IntroCont, Wrapper} from '@pages/intro/style';
 import gsap from "gsap";
 
+import {IntroCont, Wrapper} from '@pages/intro/style';
+
 export default function Intro() {
-    const imageRef = useRef(null);
-    const introRef = useRef(null);
+    const imageRef = useRef<any>(null);
+    const introRef = useRef<any>(null);
+    const dscRef = useRef<any>(null);
+    const titleRef = useRef<any>(null);
 
     useEffect(() => {
         const ani = gsap.timeline();
@@ -17,7 +20,7 @@ export default function Intro() {
                 x: 0,
                 autoAlpha: 1,
                 duration: 1,
-            }, 0.4
+            }, 0.2
         ).fromTo(introRef.current,
             {
                 x: 100,
@@ -28,16 +31,31 @@ export default function Intro() {
                 autoAlpha: 1,
                 duration: 1,
                 onComplete: () => {
-                    const texts = document.querySelectorAll(".intro-dsc span");
-                    console.log(texts)
-                    texts.forEach((text, idx) => {
-                        gsap.fromTo(text,
+                    const titles = gsap.utils.toArray(titleRef.current?.children) as HTMLElement[];
+                    const texts = gsap.utils.toArray(dscRef.current?.children) as HTMLElement[];
+
+                    titles?.forEach((title, idx) => {
+                        gsap.fromTo(title,
                             {
-                                y: 30,
+                                x: idx === 0 ? 300 : -300,
                                 autoAlpha: 0,
                             },
                             {
                                 delay: 0.2 * idx,
+                                duration: 0.8,
+                                x: 0,
+                                autoAlpha: 1,
+                            }
+                        )
+                    })
+                    texts?.forEach((text, idx) => {
+                        gsap.fromTo(text,
+                            {
+                                y: 50,
+                                autoAlpha: 0,
+                            },
+                            {
+                                delay: 0.6 + 0.2 * idx,
                                 duration: 0.8,
                                 y: 0,
                                 autoAlpha: 1,
@@ -69,8 +87,11 @@ export default function Intro() {
                             <span>web publishing</span>
                         </div>
                     </div>
-                    <div className="intro-name"></div>
-                    <div className="intro-dsc">
+                    <div ref={titleRef} className="intro-name">
+                        <p>larmong</p>
+                        <p>folio.</p>
+                    </div>
+                    <div ref={dscRef} className="intro-dsc">
                         <span>안녕하세요😊 :)</span>
                         <span>사용자 중심의 웹을 만들기 위해 노력하는 프론트엔드 이아름입니다.</span>
                         <span>larmong portfolio 2024.ver</span>

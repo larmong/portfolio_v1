@@ -71,7 +71,25 @@ export const IntroCont = styled.div`
     }
 
     .intro-name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       height: calc(100% - 456px);
+
+      p {
+        opacity: 0;
+        transform: scaleY(1.3);
+        font-family: "Rubik Mono One", sans-serif;
+        font-size: 100px;
+        text-transform: uppercase;
+      }
+
+      p:last-of-type {
+        color: transparent;
+        -webkit-text-stroke: 2px #fff;
+      }
     }
 
     .intro-dsc {
