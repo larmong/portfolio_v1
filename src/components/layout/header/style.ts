@@ -9,7 +9,7 @@ export const Wrapper = styled.header`
   width: 100vw;
   height: 120px;
   z-index: 10;
-  background: url("/assets/images/noise-background.jpg") top center / cover no-repeat;
+  background: url('/assets/images/noise-background.jpg') top center / cover no-repeat;
   display: flex;
   flex-direction: column;
 

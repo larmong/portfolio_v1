@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.div``;
 export const IntroCont = styled.div`
   display: flex;
   justify-content: space-between;
@@ -13,7 +13,7 @@ export const IntroCont = styled.div`
     justify-content: center;
     overflow: hidden;
     height: 100%;
-    background: url("/assets/images/main.png") top center / cover no-repeat;
+    background: url('/assets/images/main.png') top center / cover no-repeat;
   }
 
   .right {
@@ -54,7 +54,7 @@ export const IntroCont = styled.div`
           padding-left: 20px;
 
           &::before {
-            content: "#";
+            content: '#';
             position: absolute;
             left: 0;
             top: 50%;
@@ -81,7 +81,7 @@ export const IntroCont = styled.div`
       p {
         opacity: 0;
         transform: scaleY(1.3);
-        font-family: "Rubik Mono One", sans-serif;
+        font-family: 'Rubik Mono One', sans-serif;
         font-size: 100px;
         text-transform: uppercase;
       }
@@ -106,4 +106,4 @@ export const IntroCont = styled.div`
       }
     }
   }
-`
+`;

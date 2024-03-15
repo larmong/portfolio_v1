@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const Page = styled.div`
   padding-top: 120px;
-  background: url("/assets/images/noise-background.jpg") top center / cover no-repeat;
+  background: url('/assets/images/noise-background.jpg') top center / cover no-repeat;
 
   section {
     display: block;

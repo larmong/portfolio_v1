@@ -15,20 +15,22 @@ export default function BoardEditor({ contents, setContents }: IEditorType) {
     }
   };
 
-  return <>
-    <Editor
-      ref={editorRef}
-      previewStyle='vertical'
-      initialValue={contents}
-      autofocus={false}
-      height='600px'
-      initialEditType='markdown'
-      useCommandShortcut={true}
-      language='ko-KR'
-    />
-    <ButtonGroup>
-      <EditorBtn className='line-btn'>취소</EditorBtn>
-      <EditorBtn onClick={handleCreateNewPost}>등록</EditorBtn>
-    </ButtonGroup>
-  </>;
+  return (
+    <>
+      <Editor
+        ref={editorRef}
+        previewStyle="vertical"
+        initialValue={contents}
+        autofocus={false}
+        height="600px"
+        initialEditType="markdown"
+        useCommandShortcut={true}
+        language="ko-KR"
+      />
+      <ButtonGroup>
+        <EditorBtn className="line-btn">취소</EditorBtn>
+        <EditorBtn onClick={handleCreateNewPost}>등록</EditorBtn>
+      </ButtonGroup>
+    </>
+  );
 }

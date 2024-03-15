@@ -22,7 +22,9 @@ export default function Project() {
     void getBoardData();
   }, []);
 
-  return <>
-    <Board posts={posts} />
-  </>;
+  return (
+    <>
+      <Board posts={posts} />
+    </>
+  );
 }

@@ -1,7 +1,7 @@
 export const Default = {
   color: '#171717',
   bg: '#f8f8f8',
-  font: '\'Montserrat\', sans-serif;',
+  font: "'Montserrat', sans-serif;",
   border: '1px solid #efefef',
 };
 
@@ -14,8 +14,8 @@ export const Common = {
     darkPoint: '#405a8d',
   },
   font: {
-    en: '\'Rajdhani\', sans-serif;',
-    ko: '\'Chosunilbo_myungjo\', sans-serif;',
-    bold: '\'Rubik Mono One\', sans-serif;',
+    en: "'Rajdhani', sans-serif;",
+    ko: "'Chosunilbo_myungjo', sans-serif;",
+    bold: "'Rubik Mono One', sans-serif;",
   },
 };

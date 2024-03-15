@@ -18,9 +18,9 @@ export default function Board({ posts }: IBoardProps) {
     });
   };
 
-  return <Wrapper>
-    {
-      posts.length !== 0 ?
+  return (
+    <Wrapper>
+      {posts.length !== 0 ? (
         <>
           <BoardWrapper>
             {posts
@@ -39,8 +39,10 @@ export default function Board({ posts }: IBoardProps) {
               onChange={handlePageChange}
             />
           </PaginationWrapper>
-        </> :
-        <Empty style={{ padding: '100px 0' }} description='게시물이 없습니다.' />
-    }
-  </Wrapper>;
+        </>
+      ) : (
+        <Empty style={{ padding: '100px 0' }} description="게시물이 없습니다." />
+      )}
+    </Wrapper>
+  );
 }

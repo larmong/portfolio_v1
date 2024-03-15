@@ -21,26 +21,28 @@ export default function Card({ post }: ICardProps) {
     }
   }, [cardRef.current]);
 
-  return <Wrapper ref={cardRef}>
-    <div
-      onClick={handleMoveToDetail}
-      className='img-wrapper'
-      style={{
-        height: `${cardWidth}px`,
-        background: `url('${thumb}')
+  return (
+    <Wrapper ref={cardRef}>
+      <div
+        onClick={handleMoveToDetail}
+        className="img-wrapper"
+        style={{
+          height: `${cardWidth}px`,
+          background: `url('${thumb}')
       center center / cover no-repeat`,
-      }}
-    ></div>
-    <div className='text-wrapper'>
-      <span>{category}</span>
-      <p>
-        <i onClick={handleMoveToDetail}>{title}</i>
-      </p>
-      <ul>
-        {tags.map((tag: string, idx: number) => (
-          <li key={`${tags}_${idx}`}>{tag}</li>
-        ))}
-      </ul>
-    </div>
-  </Wrapper>;
+        }}
+      ></div>
+      <div className="text-wrapper">
+        <span>{category}</span>
+        <p>
+          <i onClick={handleMoveToDetail}>{title}</i>
+        </p>
+        <ul>
+          {tags.map((tag: string, idx: number) => (
+            <li key={`${tags}_${idx}`}>{tag}</li>
+          ))}
+        </ul>
+      </div>
+    </Wrapper>
+  );
 }

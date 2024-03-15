@@ -3,15 +3,15 @@ import { Default } from './emotion';
 
 export const GlobalStyle = css`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-  @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Rubik+Mono+One&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Rubik+Mono+One&display=swap');
 
   @font-face {
     font-family: 'Montserrat', sans-serif;
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
   }
   @font-face {
-    font-family: "Chosunilbo_myungjo";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
+    font-family: 'Chosunilbo_myungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
