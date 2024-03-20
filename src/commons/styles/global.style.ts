@@ -32,6 +32,10 @@ export const GlobalStyle = css`
     user-select: none;
   }
 
+  html {
+    background: url('/assets/images/noise-background.jpg') top center / cover no-repeat;
+  }
+
   body {
     font-family: ${Default.font};
     font-weight: 400;
