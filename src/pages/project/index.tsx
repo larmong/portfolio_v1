@@ -1,15 +1,19 @@
-import Board from '@components/board';
-import { useEffect, useState } from 'react';
-import { PostDataType } from '@components/card/type';
+import Board from "@components/board";
+import { useEffect, useState } from "react";
+import { PostDataType } from "@components/card/type";
+import { Wrapper } from "@pages/project/style";
 
 export default function Project() {
   const [posts, setPosts] = useState<PostDataType[] | []>([]);
 
   const getBoardData = async () => {
     try {
-      const result = await fetch('http://localhost:3000/data/button.json', {
-        method: 'GET',
-      });
+      const result = await fetch(
+        "http://localhost:3000/assets/data/data.json",
+        {
+          method: "GET",
+        }
+      );
 
       const { data }: { data: PostDataType[] | [] } = await result.json();
       setPosts(data);
@@ -23,8 +27,10 @@ export default function Project() {
   }, []);
 
   return (
-    <>
-      <Board posts={posts} />
-    </>
+    <Wrapper>
+      <div className="container">
+        <Board posts={posts} />
+      </div>
+    </Wrapper>
   );
 }

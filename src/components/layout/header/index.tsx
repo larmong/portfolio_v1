@@ -1,14 +1,14 @@
-import { useEffect, useRef } from 'react';
-import { useLocation, useNavigate } from 'react-router';
-import gsap from 'gsap';
+import { useEffect, useRef } from "react";
+import { useLocation, useNavigate } from "react-router";
+import gsap from "gsap";
 
-import { Gnb, Wrapper } from '@components/layout/header/style';
+import { Gnb, Wrapper } from "@components/layout/header/style";
 
 export default function Header() {
   const headerRef = useRef(null);
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const menus: string[] = ['intro', 'about', 'skill', 'project', 'contact'];
+  const menus: string[] = ["intro", "about", "profile", "project", "contact"];
 
   useEffect(() => {
     const ani = gsap.timeline();
@@ -33,7 +33,7 @@ export default function Header() {
         <h1>
           <img
             onClick={() => {
-              navigate('/');
+              navigate("/");
             }}
             src={`${process.env.PUBLIC_URL}/assets/images/logo.svg`}
             alt=""
@@ -43,9 +43,14 @@ export default function Header() {
           {menus.map((menu: string) => (
             <li
               key={menu}
-              className={pathname.split('/')[1] === menu || (pathname === '/' && menu === 'intro') ? 'active' : ''}
+              className={
+                pathname.split("/")[1] === menu ||
+                (pathname === "/" && menu === "intro")
+                  ? "active"
+                  : ""
+              }
               onClick={() => {
-                navigate(`${menu === 'intro' ? '/' : menu}`);
+                navigate(`${menu === "intro" ? "/" : menu}`);
               }}
             >
               {menu}

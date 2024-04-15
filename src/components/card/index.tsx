@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router";
 
-import { Wrapper } from '@components/card/style';
-import { ICardProps } from '@components/card/type';
+import { Wrapper } from "@components/card/style";
+import { ICardProps } from "@components/card/type";
+import TagIcon from "@components/card/tags";
 
 export default function Card({ post }: ICardProps) {
   const navigate = useNavigate();
@@ -39,7 +40,9 @@ export default function Card({ post }: ICardProps) {
         </p>
         <ul>
           {tags.map((tag: string, idx: number) => (
-            <li key={`${tags}_${idx}`}>{tag}</li>
+            <li key={`${tags}_${idx}`}>
+              <TagIcon tag={tag} />
+            </li>
           ))}
         </ul>
       </div>
