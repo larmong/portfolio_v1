@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface PostDataType {
   id: string;
   name: string;
@@ -10,4 +12,5 @@ export interface PostDataType {
 
 export type ICardProps = {
   post: PostDataType;
+  setIsModal: Dispatch<SetStateAction<boolean>>;
 };

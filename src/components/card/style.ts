@@ -43,9 +43,6 @@ export const Wrapper = styled.div`
       align-items: center;
       li {
         color: ${Common.color.gray};
-        //padding: 2px 5px 3px 5px;
-        // border: 1px solid ${Common.color.gray};
-        //border-radius: 6px;
       }
     }
   }

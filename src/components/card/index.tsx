@@ -5,7 +5,7 @@ import { Wrapper } from "@components/card/style";
 import { ICardProps } from "@components/card/type";
 import TagIcon from "@components/card/tags";
 
-export default function Card({ post }: ICardProps) {
+export default function Card({ post, setIsModal }: ICardProps) {
   const navigate = useNavigate();
   const cardRef = useRef<HTMLDivElement | null>(null);
 
@@ -13,7 +13,8 @@ export default function Card({ post }: ICardProps) {
   const [cardWidth, setCardWidth] = useState<any>(0);
 
   const handleMoveToDetail = () => {
-    navigate(`${id}`);
+    // navigate(`${id}`);
+    setIsModal(true);
   };
 
   useEffect(() => {

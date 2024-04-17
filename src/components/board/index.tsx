@@ -1,12 +1,17 @@
-import { useState } from 'react';
-import { Pagination, Empty } from 'antd';
+import { useState } from "react";
+import { Pagination, Empty } from "antd";
 
-import { IBoardProps } from '@components/board/type';
-import { PostDataType } from '@components/card/type';
-import { BoardWrapper, CardWrapper, PaginationWrapper, Wrapper } from '@components/board/style';
-import Card from '@components/card';
+import { IBoardProps } from "@components/board/type";
+import { PostDataType } from "@components/card/type";
+import {
+  BoardWrapper,
+  CardWrapper,
+  PaginationWrapper,
+  Wrapper,
+} from "@components/board/style";
+import Card from "@components/card";
 
-export default function Board({ posts }: IBoardProps) {
+export default function Board({ posts, setIsModal }: IBoardProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(10);
 
@@ -14,7 +19,7 @@ export default function Board({ posts }: IBoardProps) {
     setCurrentPage(page);
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -27,7 +32,7 @@ export default function Board({ posts }: IBoardProps) {
               .slice((currentPage - 1) * pageSize, currentPage * pageSize)
               .map((post: PostDataType, idx: number) => (
                 <CardWrapper key={idx}>
-                  <Card key={idx} post={post} />
+                  <Card key={idx} post={post} setIsModal={setIsModal} />
                 </CardWrapper>
               ))}
           </BoardWrapper>
@@ -41,7 +46,10 @@ export default function Board({ posts }: IBoardProps) {
           </PaginationWrapper>
         </>
       ) : (
-        <Empty style={{ padding: '100px 0' }} description="게시물이 없습니다." />
+        <Empty
+          style={{ padding: "100px 0" }}
+          description="게시물이 없습니다."
+        />
       )}
     </Wrapper>
   );

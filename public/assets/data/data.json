@@ -29,8 +29,13 @@
       "thumb": "https://source.unsplash.com/random/?design",
       "cont": "텍스트가 흩날리는 모션의 내용입니다",
       "tags": [
-        "react",
-        "javascript"
+        "nextjs",
+        "firebase",
+        "mongodb",
+        "graphql",
+        "photoshop",
+        "illustrator",
+        "adobexd"
       ]
     },
     {
@@ -42,8 +47,9 @@
       "thumb": "https://source.unsplash.com/random/?design",
       "cont": "컬러가 반전되는 모션의 내용입니다",
       "tags": [
-        "react",
-        "javascript"
+        "github",
+        "netlify",
+        "aws"
       ]
     },
     {

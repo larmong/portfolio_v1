@@ -1,10 +1,13 @@
-import Board from "@components/board";
 import { useEffect, useState } from "react";
 import { PostDataType } from "@components/card/type";
+
 import { Wrapper } from "@pages/project/style";
+import Board from "@components/board";
+import Modal from "@components/modal";
 
 export default function Project() {
   const [posts, setPosts] = useState<PostDataType[] | []>([]);
+  const [isModal, setIsModal] = useState<boolean>(true);
 
   const getBoardData = async () => {
     try {
@@ -29,8 +32,9 @@ export default function Project() {
   return (
     <Wrapper>
       <div className="container">
-        <Board posts={posts} />
+        <Board posts={posts} setIsModal={setIsModal} />
       </div>
+      <Modal isModal={isModal} />
     </Wrapper>
   );
 }

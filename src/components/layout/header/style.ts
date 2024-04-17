@@ -13,7 +13,7 @@ export const Wrapper = styled.header`
     no-repeat;
   display: flex;
   flex-direction: column;
-
+  display: none;
   h1 {
     height: 70px;
     display: flex;

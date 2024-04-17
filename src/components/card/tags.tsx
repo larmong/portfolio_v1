@@ -1,6 +1,6 @@
 import {
   SiCss3,
-  SiFigma,
+  SiGithub,
   SiHtml5,
   SiJavascript,
   SiReact,
@@ -9,6 +9,7 @@ import {
 import { FaVuejs } from "react-icons/fa";
 import styled from "@emotion/styled";
 import { useRef } from "react";
+import { TbBrandNextjs } from "react-icons/tb";
 
 export const TagWrapper = styled.div`
   position: relative;
@@ -61,7 +62,7 @@ const TagIcon = ({ tag }: { tag: string }) => {
               color: "#ffd710",
             }}
           />
-          <HoverTag ref={useHover}>{tag}</HoverTag>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
     case "typescript":
@@ -76,7 +77,7 @@ const TagIcon = ({ tag }: { tag: string }) => {
               color: "#4d7bc2",
             }}
           />
-          <HoverTag ref={useHover}>{tag}</HoverTag>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
     case "react":
@@ -87,7 +88,7 @@ const TagIcon = ({ tag }: { tag: string }) => {
             onMouseLeave={onMouseHover("leave")}
             style={{ width: "20px", height: "20px", color: "rgb(0 206 255)" }}
           />
-          <HoverTag ref={useHover}>{tag}</HoverTag>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
     case "vue":
@@ -98,7 +99,7 @@ const TagIcon = ({ tag }: { tag: string }) => {
             onMouseLeave={onMouseHover("leave")}
             style={{ width: "20px", height: "20px", color: "rgb(32,162,126)" }}
           />
-          <HoverTag ref={useHover}>{tag}</HoverTag>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
     case "emotion":
@@ -111,7 +112,7 @@ const TagIcon = ({ tag }: { tag: string }) => {
             src="https://emotion.sh/logo-48x48.png"
             alt="Emotion"
           />
-          <HoverTag ref={useHover}>{tag}</HoverTag>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
     case "styled-components":
@@ -137,7 +138,7 @@ const TagIcon = ({ tag }: { tag: string }) => {
               alt="styled-components"
             />
           </span>
-          <HoverTag ref={useHover}>{tag}</HoverTag>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
     case "figma":
@@ -150,7 +151,7 @@ const TagIcon = ({ tag }: { tag: string }) => {
             src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png"
             alt="Figma"
           />
-          <HoverTag ref={useHover}>{tag}</HoverTag>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
     case "html":
@@ -161,7 +162,7 @@ const TagIcon = ({ tag }: { tag: string }) => {
             onMouseLeave={onMouseHover("leave")}
             style={{ width: "20px", height: "20px", color: "rgb(255,98,0)" }}
           />
-          <HoverTag ref={useHover}>{tag}</HoverTag>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
     case "css":
@@ -172,7 +173,164 @@ const TagIcon = ({ tag }: { tag: string }) => {
             onMouseLeave={onMouseHover("leave")}
             style={{ width: "20px", height: "20px", color: "rgb(103,141,241)" }}
           />
-          <HoverTag ref={useHover}>{tag}</HoverTag>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "nextjs":
+      return (
+        <TagWrapper>
+          <TbBrandNextjs
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{ width: "22px", height: "22px", color: "rgb(255,255,255)" }}
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "firebase":
+      return (
+        <TagWrapper>
+          <img
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{ height: "20px", color: "rgb(32,162,126)" }}
+            src="https://www.gstatic.com/devrel-devsite/prod/v66c4dc9b65fea2172a0927d7be81b5b5d946ea60fc02578dd7c264b2c2852152/firebase/images/touchicon-180.png"
+            alt="firebase"
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "mongodb":
+      return (
+        <TagWrapper>
+          <span
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{
+              display: "block",
+              width: "54px",
+              height: "20px",
+              overflow: "hidden",
+              paddingTop: "2px",
+            }}
+          >
+            <img
+              style={{
+                width: "auto",
+                height: "15px",
+                color: "rgb(32,162,126)",
+              }}
+              src="https://umangsoftware.com/wp-content/uploads/2020/05/MongoDB-logo.png"
+              alt="mongodb"
+            />
+          </span>
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "graphql":
+      return (
+        <TagWrapper>
+          <img
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{ height: "20px", color: "rgb(32,162,126)" }}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1200px-GraphQL_Logo.svg.png"
+            alt="graphql"
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "photoshop":
+      return (
+        <TagWrapper>
+          <img
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{
+              height: "22px",
+              color: "rgb(32,162,126)",
+              border: "1px solid rgb(255 255 255 / 10%)",
+            }}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/2101px-Adobe_Photoshop_CC_icon.svg.png"
+            alt="photoshop"
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "illustrator":
+      return (
+        <TagWrapper>
+          <img
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{
+              height: "22px",
+              color: "rgb(32,162,126)",
+              border: "1px solid rgb(255 255 255 / 10%)",
+            }}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/1200px-Adobe_Illustrator_CC_icon.svg.png"
+            alt="illustrator"
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "adobexd":
+      return (
+        <TagWrapper>
+          <img
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{
+              height: "22px",
+              color: "rgb(32,162,126)",
+              border: "1px solid rgb(255 255 255 / 10%)",
+            }}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/1200px-Adobe_XD_CC_icon.svg.png"
+            alt="adobexd"
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "github":
+      return (
+        <TagWrapper>
+          <SiGithub
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{ width: "20px", height: "20px", color: "rgb(255,255,255)" }}
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "netlify":
+      return (
+        <TagWrapper>
+          <img
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{
+              height: "22px",
+            }}
+            src="https://static-00.iconduck.com/assets.00/netlify-icon-2048x2048-xurlvzbi.png"
+            alt="netlify"
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
+    case "aws":
+      return (
+        <TagWrapper>
+          <img
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{
+              height: "22px",
+              border: "1px solid rgb(255 255 255 / 20%)",
+            }}
+            src="https://pbs.twimg.com/profile_images/1351702967561252865/aXfcETIt_400x400.jpg"
+            alt="aws"
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
     default:
