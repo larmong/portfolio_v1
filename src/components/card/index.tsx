@@ -1,19 +1,21 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router";
+import { useSetRecoilState } from "recoil";
 
+import { ICardProps, PostDataType } from "@components/card/type";
+import { isModalState, isPostsState } from "@store/store";
 import { Wrapper } from "@components/card/style";
-import { ICardProps } from "@components/card/type";
 import TagIcon from "@components/card/tags";
 
-export default function Card({ post, setIsModal }: ICardProps) {
-  const navigate = useNavigate();
+export default function Card({ post }: ICardProps) {
   const cardRef = useRef<HTMLDivElement | null>(null);
+  const setIsPost = useSetRecoilState<PostDataType | null>(isPostsState);
+  const setIsModal = useSetRecoilState<boolean>(isModalState);
 
   const { id, category, title, tags, thumb } = post;
   const [cardWidth, setCardWidth] = useState<any>(0);
 
   const handleMoveToDetail = () => {
-    // navigate(`${id}`);
+    setIsPost(post);
     setIsModal(true);
   };
 

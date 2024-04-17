@@ -3,21 +3,19 @@ import { Common } from "@commons/styles/emotion";
 import { IsModalType } from "@components/modal/type";
 
 export const Wrapper = styled.div`
-  //transition: opacity 0.8s ease;
+  transition: all 0.8s ease;
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.25);
-  z-index: 1000;
-  display: ${(props: IsModalType) => (props.isModal ? "block" : "none")};
-  opacity: ${(props: IsModalType) => (props.isModal ? "1" : "0")};
+  z-index: ${(props: IsModalType) => (props.isModal ? "1000" : "-1")};
+  background: ${(props: IsModalType) =>
+    props.isModal ? "rgba(255, 255, 255, 0.25)" : "rgba(255, 255, 255, 0)"};
 `;
+
 export const ModalWrapper = styled.div`
   transition: transform 0.8s ease;
-  transform: ${(props: IsModalType) =>
-    props.isModal ? "translateX(0px)" : "translateX(700px)"};
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -29,14 +27,15 @@ export const ModalWrapper = styled.div`
   padding: 30px;
   background: url("/assets/images/noise-background.jpg") top center / cover
     no-repeat;
+  transform: ${(props: IsModalType) =>
+    props.isModal ? "translateX(0px)" : "translateX(700px)"};
 
   .top-cont {
     display: flex;
     justify-content: space-between;
   }
-  .center-cont {
-  }
 `;
+
 export const TitleWrapper = styled.div`
   width: calc(100% - 80px);
   display: flex;
@@ -92,6 +91,7 @@ export const BtnGroup = styled.div`
   gap: 20px;
   width: 100%;
   height: 40px;
+  margin-top: 30px;
   > div {
     display: flex;
     align-items: center;
@@ -114,7 +114,6 @@ export const TextCont = styled.div`
   overflow: hidden;
   color: ${Common.color.lightGray};
   font-family: ${Common.font.ko};
-  margin-top: 30px;
   line-height: 26px;
   overflow-y: auto;
   padding: 10px 14px;

@@ -11,7 +11,7 @@ import {
 } from "@components/board/style";
 import Card from "@components/card";
 
-export default function Board({ posts, setIsModal }: IBoardProps) {
+export default function Board({ posts }: IBoardProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(10);
 
@@ -32,7 +32,7 @@ export default function Board({ posts, setIsModal }: IBoardProps) {
               .slice((currentPage - 1) * pageSize, currentPage * pageSize)
               .map((post: PostDataType, idx: number) => (
                 <CardWrapper key={idx}>
-                  <Card key={idx} post={post} setIsModal={setIsModal} />
+                  <Card key={idx} post={post} />
                 </CardWrapper>
               ))}
           </BoardWrapper>

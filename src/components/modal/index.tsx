@@ -1,3 +1,10 @@
+import { useRecoilState, useRecoilValue } from "recoil";
+import { useRef } from "react";
+import { IoMdClose } from "react-icons/io";
+import { FaGithub } from "react-icons/fa";
+import { RiPagesFill } from "react-icons/ri";
+
+import { PostDataType } from "@components/card/type";
 import {
   BtnGroup,
   CloseBtn,
@@ -8,97 +15,73 @@ import {
   TitleWrapper,
   Wrapper,
 } from "@components/modal/style";
-import { IoMdClose } from "react-icons/io";
-import { FaGithub } from "react-icons/fa";
-import { RiPagesFill } from "react-icons/ri";
 import TagIcon from "@components/card/tags";
+import { isModalState, isPostsState } from "@store/store";
 import { CustomMouseEvent } from "@commons/types/global.types";
-import { useState } from "react";
-import { IPropsModalType } from "@components/modal/type";
 
-export default function Modal({ isModal }: IPropsModalType) {
-  const tags = [
-    "react",
-    "javascript",
-    "typescript",
-    "vue",
-    "styled-components",
-    "emotion",
-    "figma",
-    "html",
-    "css",
-  ];
+export default function Modal() {
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const isPost = useRecoilValue<PostDataType | null>(isPostsState);
+  const [isModal, setIsModal] = useRecoilState<boolean>(isModalState);
 
-  const handleMoveToLink = (e: CustomMouseEvent) => {
-    if (e.currentTarget.id === "code") {
-      // code 페이지 이동
-    } else {
-      // view 페이지 이동
+  const handleMoveToLink = (url: string) => {
+    window.open(url, "_blank", "noopener, noreferrer");
+  };
+
+  const handleCloseModal = (e: CustomMouseEvent) => {
+    if (modalRef && e.target === modalRef.current) {
+      setIsModal(false);
     }
   };
 
   return (
-    <Wrapper isModal={isModal}>
+    <Wrapper ref={modalRef} isModal={isModal} onClick={handleCloseModal}>
       <ModalWrapper isModal={isModal}>
         <div className="top-cont">
           <TitleWrapper>
-            <span>Web</span>
-            <p>텍스트가 흩날리는 모션 텍스트가 흩날리는 모션</p>
+            <span>{isPost?.category}</span>
+            <p>{isPost?.title}</p>
           </TitleWrapper>
-          <CloseBtn>
+          <CloseBtn
+            onClick={() => {
+              setIsModal(false);
+            }}
+          >
             <IoMdClose />
           </CloseBtn>
         </div>
         <div className="center-cont">
           <ImgBox
             style={{
-              background: `url('https://source.unsplash.com/random/?design')center center / cover no-repeat`,
+              background: `url('${isPost?.thumb}')center center / cover no-repeat`,
             }}
           ></ImgBox>
         </div>
         <div className="bottom-cont">
           <TagGroup>
-            {tags.map((tag: string, idx: number) => (
-              <li key={`${tags}_${idx}`}>
+            {isPost?.tags.map((tag: string, idx: number) => (
+              <li key={`${tag}_${idx}`}>
                 <TagIcon tag={tag} />
               </li>
             ))}
           </TagGroup>
+          <TextCont>{isPost?.cont}</TextCont>
           <BtnGroup>
-            <div className="code" id="code" onClick={handleMoveToLink}>
+            <div
+              className="code"
+              onClick={() => handleMoveToLink(`${isPost?.code}`)}
+            >
               <FaGithub />
               <span>CODE</span>
             </div>
-            <div className="view" id="view" onClick={handleMoveToLink}>
+            <div
+              className="view"
+              onClick={() => handleMoveToLink(`${isPost?.view}`)}
+            >
               <RiPagesFill />
               <span>VIEW</span>
             </div>
           </BtnGroup>
-          <TextCont>
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            1텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            2텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            3텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            4텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            5텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-            텍스트가 흩날리는 모션 텍스트가 흩날리는 모션 <br />
-          </TextCont>
         </div>
       </ModalWrapper>
     </Wrapper>

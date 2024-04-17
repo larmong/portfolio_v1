@@ -34,6 +34,7 @@ export const HoverTag = styled.div`
     border-bottom: 11px solid #ffffff;
     border-left: 8px solid transparent;
     border-right: 10px solid transparent;
+    pointer-events: none;
   }
 `;
 

@@ -7,7 +7,6 @@ import Modal from "@components/modal";
 
 export default function Project() {
   const [posts, setPosts] = useState<PostDataType[] | []>([]);
-  const [isModal, setIsModal] = useState<boolean>(true);
 
   const getBoardData = async () => {
     try {
@@ -32,9 +31,9 @@ export default function Project() {
   return (
     <Wrapper>
       <div className="container">
-        <Board posts={posts} setIsModal={setIsModal} />
+        <Board posts={posts} />
       </div>
-      <Modal isModal={isModal} />
+      <Modal />
     </Wrapper>
   );
 }
