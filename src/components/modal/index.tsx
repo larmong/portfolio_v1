@@ -15,9 +15,9 @@ import {
   TitleWrapper,
   Wrapper,
 } from "@components/modal/style";
-import TagIcon from "@components/card/tags";
 import { isModalState, isPostsState } from "@store/store";
 import { CustomMouseEvent } from "@commons/types/global.types";
+import TagIcon from "@components/tag";
 
 export default function Modal() {
   const modalRef = useRef<HTMLDivElement | null>(null);

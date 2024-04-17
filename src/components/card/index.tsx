@@ -4,7 +4,7 @@ import { useSetRecoilState } from "recoil";
 import { ICardProps, PostDataType } from "@components/card/type";
 import { isModalState, isPostsState } from "@store/store";
 import { Wrapper } from "@components/card/style";
-import TagIcon from "@components/card/tags";
+import TagIcon from "@components/tag";
 
 export default function Card({ post }: ICardProps) {
   const cardRef = useRef<HTMLDivElement | null>(null);

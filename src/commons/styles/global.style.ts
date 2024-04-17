@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { Default } from "./emotion";
+import { Common, Default } from "./emotion";
 
 export const GlobalStyle = css`
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
@@ -44,7 +44,7 @@ export const GlobalStyle = css`
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
-    color: ${Default.color};
+    color: ${Common.color.lightGray};
   }
 
   em,
