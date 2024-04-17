@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { PostDataType } from "@components/card/type";
 
-import { Wrapper } from "@pages/project/style";
+import { BoardTab, Wrapper } from "@pages/project/style";
 import Board from "@components/board";
 import Modal from "@components/modal";
 
@@ -31,6 +31,12 @@ export default function Project() {
   return (
     <Wrapper>
       <div className="container">
+        <BoardTab>
+          <li>web</li>
+          <li>mobile</li>
+          <li>animaion</li>
+          <li>design</li>
+        </BoardTab>
         <Board posts={posts} />
       </div>
       <Modal />
