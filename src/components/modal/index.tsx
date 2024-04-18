@@ -4,7 +4,9 @@ import { IoMdClose } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import { RiPagesFill } from "react-icons/ri";
 
-import { PostDataType } from "@components/card/type";
+import { isModalState, isPostsState } from "@store/store";
+import { CustomMouseEvent } from "@commons/types/global.types";
+import { ITypeProject } from "@commons/libraries/firebase/data.types";
 import {
   BtnGroup,
   CloseBtn,
@@ -15,13 +17,11 @@ import {
   TitleWrapper,
   Wrapper,
 } from "@components/modal/style";
-import { isModalState, isPostsState } from "@store/store";
-import { CustomMouseEvent } from "@commons/types/global.types";
 import TagIcon from "@components/tag";
 
 export default function Modal() {
   const modalRef = useRef<HTMLDivElement | null>(null);
-  const isPost = useRecoilValue<PostDataType | null>(isPostsState);
+  const isPost = useRecoilValue<ITypeProject>(isPostsState);
   const [isModal, setIsModal] = useRecoilState<boolean>(isModalState);
 
   const handleMoveToLink = (url: string) => {
@@ -39,7 +39,7 @@ export default function Modal() {
       <ModalWrapper isModal={isModal}>
         <div className="top-cont">
           <TitleWrapper>
-            <span>{isPost?.category}</span>
+            <span>{isPost?.categoryId}</span>
             <p>{isPost?.title}</p>
           </TitleWrapper>
           <CloseBtn
@@ -59,24 +59,24 @@ export default function Modal() {
         </div>
         <div className="bottom-cont">
           <TagGroup>
-            {isPost?.tags.map((tag: string, idx: number) => (
-              <li key={`${tag}_${idx}`}>
-                <TagIcon tag={tag} />
+            {isPost?.skills?.map((skill: string, idx: number) => (
+              <li key={`${skill}_${idx}`}>
+                <TagIcon tag={skill} />
               </li>
             ))}
           </TagGroup>
-          <TextCont>{isPost?.cont}</TextCont>
+          <TextCont>{isPost?.dec}</TextCont>
           <BtnGroup>
             <div
               className="code"
-              onClick={() => handleMoveToLink(`${isPost?.code}`)}
+              onClick={() => handleMoveToLink(`${isPost?.view?.code}`)}
             >
               <FaGithub />
               <span>CODE</span>
             </div>
             <div
               className="view"
-              onClick={() => handleMoveToLink(`${isPost?.view}`)}
+              onClick={() => handleMoveToLink(`${isPost?.view?.page}`)}
             >
               <RiPagesFill />
               <span>VIEW</span>

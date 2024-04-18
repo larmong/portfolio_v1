@@ -1,16 +1,5 @@
-export interface PostDataType {
-  id: string | number;
-  name: string;
-  category: string;
-  createdDt: string;
-  title: string;
-  thumb: string;
-  cont: string;
-  tags: string[];
-  code: string;
-  view: string;
-}
+import { ITypeProject } from "@commons/libraries/firebase/data.types";
 
 export type ICardProps = {
-  post: PostDataType;
+  post: ITypeProject;
 };

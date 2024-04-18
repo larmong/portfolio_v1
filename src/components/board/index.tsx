@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useRecoilValue } from "recoil";
 import { Pagination, Empty } from "antd";
 
-import { IBoardProps } from "@components/board/type";
-import { PostDataType } from "@components/card/type";
+import { ITypeProject } from "@commons/libraries/firebase/data.types";
+import { isPostDataState } from "@store/store";
 import {
   BoardWrapper,
   CardWrapper,
@@ -11,7 +12,8 @@ import {
 } from "@components/board/style";
 import Card from "@components/card";
 
-export default function Board({ posts }: IBoardProps) {
+export default function Board() {
+  const isPostData = useRecoilValue(isPostDataState);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(10);
 
@@ -25,14 +27,14 @@ export default function Board({ posts }: IBoardProps) {
 
   return (
     <Wrapper>
-      {posts.length !== 0 ? (
+      {isPostData && isPostData.length !== 0 ? (
         <>
           <BoardWrapper>
-            {posts
+            {isPostData
               .slice((currentPage - 1) * pageSize, currentPage * pageSize)
-              .map((post: PostDataType, idx: number) => (
+              .map((post: ITypeProject, idx: number) => (
                 <CardWrapper key={idx}>
-                  <Card key={idx} post={post} />
+                  <Card key={idx} post={isPostData && post} />
                 </CardWrapper>
               ))}
           </BoardWrapper>
@@ -40,7 +42,7 @@ export default function Board({ posts }: IBoardProps) {
             <Pagination
               defaultCurrent={currentPage}
               pageSize={pageSize}
-              total={posts.length}
+              total={isPostData.length}
               onChange={handlePageChange}
             />
           </PaginationWrapper>

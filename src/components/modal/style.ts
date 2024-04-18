@@ -10,9 +10,10 @@ export const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: ${(props: IsModalType) => (props.isModal ? "1000" : "-1")};
-  background: ${(props: IsModalType) =>
-    props.isModal ? "rgba(255, 255, 255, 0.25)" : "rgba(255, 255, 255, 0)"};
+  background: #fff;
 `;
+// background: ${(props: IsModalType) =>
+//   props.isModal ? "rgba(255, 255, 255, 0.25)" : "rgba(255, 255, 255, 0)"};
 
 export const ModalWrapper = styled.div`
   transition: transform 0.8s ease;

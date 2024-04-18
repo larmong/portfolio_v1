@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { PostDataType } from "@components/card/type";
+import { ITypeProject } from "@commons/libraries/firebase/data.types";
 
 export const routeState = atom<string>({
   key: "routeState",
@@ -11,7 +11,42 @@ export const isModalState = atom<boolean>({
   default: false,
 });
 
-export const isPostsState = atom<PostDataType | null>({
+export const projectCategoryState = atom<string>({
+  key: "projectCategoryState",
+  default: "all",
+});
+
+export const getPostDataState = atom<ITypeProject[] | []>({
+  key: "getPostDataState",
+  default: [],
+});
+
+export const isPostDataState = atom<ITypeProject[] | []>({
+  key: "isPostDataState",
+  default: [],
+});
+
+export const isPostsState = atom<ITypeProject>({
   key: "isPostsState",
-  default: null,
+  default: {
+    id: "",
+    categoryId: "",
+    date: "",
+    startDate: "",
+    endDate: "",
+    title: "",
+    thumb: "",
+    cont: {
+      unit: "",
+      optimization: "",
+      percent: "",
+    },
+    skills: [""],
+    view: {
+      code: "",
+      page: "",
+    },
+    num: 0,
+    dec: "",
+  },
 });
