@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { Common } from "@commons/styles/emotion";
-import { IsModalType } from "@components/modal/type";
+import styled from '@emotion/styled';
+import { Common } from '@commons/styles/emotion';
+import { IsModalType } from '@components/modal/type';
 
 export const Wrapper = styled.div`
   transition: all 0.8s ease;
@@ -9,11 +9,9 @@ export const Wrapper = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: ${(props: IsModalType) => (props.isModal ? "1000" : "-1")};
-  background: #fff;
+  z-index: ${(props: IsModalType) => (props.isModal ? '1000' : '-1')};
+  background: ${(props: IsModalType) => (props.isModal ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0)')};
 `;
-// background: ${(props: IsModalType) =>
-//   props.isModal ? "rgba(255, 255, 255, 0.25)" : "rgba(255, 255, 255, 0)"};
 
 export const ModalWrapper = styled.div`
   transition: transform 0.8s ease;
@@ -26,14 +24,16 @@ export const ModalWrapper = styled.div`
   width: 700px;
   height: 100vh;
   padding: 30px;
-  background: url("/assets/images/noise-background.jpg") top center / cover
-    no-repeat;
-  transform: ${(props: IsModalType) =>
-    props.isModal ? "translateX(0px)" : "translateX(700px)"};
-
+  background: url('/assets/images/noise-background.jpg') top center / cover no-repeat;
+  transform: ${(props: IsModalType) => (props.isModal ? 'translateX(0px)' : 'translateX(700px)')};
   .top-cont {
     display: flex;
     justify-content: space-between;
+  }
+  .bottom-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 `;
 
@@ -41,7 +41,7 @@ export const TitleWrapper = styled.div`
   width: calc(100% - 80px);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
   span {
     font-weight: bold;
     color: ${Common.color.point};
@@ -54,6 +54,7 @@ export const TitleWrapper = styled.div`
     white-space: nowrap;
     overflow: hidden;
     color: ${Common.color.lightGray};
+    font-family: ${Common.font.ko};
   }
 `;
 
@@ -77,6 +78,7 @@ export const CloseBtn = styled.div`
 export const ImgBox = styled.div`
   width: 100%;
   height: 400px;
+  border: 1px solid ${Common.color.lightGray};
 `;
 
 export const TagGroup = styled.ul`
@@ -84,7 +86,6 @@ export const TagGroup = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 30px;
 `;
 
 export const BtnGroup = styled.div`
@@ -92,7 +93,6 @@ export const BtnGroup = styled.div`
   gap: 20px;
   width: 100%;
   height: 40px;
-  margin-top: 30px;
   > div {
     display: flex;
     align-items: center;
@@ -110,12 +110,47 @@ export const BtnGroup = styled.div`
 `;
 
 export const TextCont = styled.div`
+  text-transform: uppercase;
   // border: 1px solid ${Common.color.lightGray};
-  height: calc(100vh - 685px);
-  overflow: hidden;
-  color: ${Common.color.lightGray};
-  font-family: ${Common.font.ko};
-  line-height: 26px;
-  overflow-y: auto;
-  padding: 10px 14px;
+  // height: calc(100vh - 685px);
+  // overflow: hidden;
+  // color: ${Common.color.lightGray};
+  // font-family: ${Common.font.ko};
+  // line-height: 26px;
+  // overflow-y: auto;
+  // padding: 10px 14px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-family: ${Common.font.ko};
+    li {
+      &.optimization {
+        display: flex;
+        gap: 30px;
+        opacity: 0.5;
+        span {
+          position: relative;
+
+          &:not(:last-of-type)::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -15px;
+            width: 1px;
+            height: 12px;
+            background: #fff;
+          }
+        }
+      }
+      &.dec {
+        text-align: center;
+        margin-top: 20px;
+        line-height: 24px;
+      }
+    }
+  }
 `;

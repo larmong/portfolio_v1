@@ -20,6 +20,6 @@ export interface ITypeView {
 
 export interface ITypeCont {
   unit: string;
-  optimization: string;
+  optimization: string[];
   percent: string;
 }

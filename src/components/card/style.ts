@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { Common, Default } from "@commons/styles/emotion";
+import styled from '@emotion/styled';
+import { Common, Default } from '@commons/styles/emotion';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   .img-wrapper {
     width: 100%;
     cursor: pointer;
-    border: 1px solid ${Default.color};
+    border: 1px solid ${Common.color.lightGray};
   }
 
   .text-wrapper {

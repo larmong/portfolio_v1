@@ -1,52 +1,52 @@
-import { atom } from "recoil";
-import { ITypeProject } from "@commons/libraries/firebase/data.types";
+import { atom } from 'recoil';
+import { ITypeProject } from '@commons/libraries/firebase/data.types';
 
 export const routeState = atom<string>({
-  key: "routeState",
-  default: "/",
+  key: 'routeState',
+  default: '/',
 });
 
 export const isModalState = atom<boolean>({
-  key: "isModalState",
+  key: 'isModalState',
   default: false,
 });
 
 export const projectCategoryState = atom<string>({
-  key: "projectCategoryState",
-  default: "all",
+  key: 'projectCategoryState',
+  default: 'all',
 });
 
 export const getPostDataState = atom<ITypeProject[] | []>({
-  key: "getPostDataState",
+  key: 'getPostDataState',
   default: [],
 });
 
 export const isPostDataState = atom<ITypeProject[] | []>({
-  key: "isPostDataState",
+  key: 'isPostDataState',
   default: [],
 });
 
 export const isPostsState = atom<ITypeProject>({
-  key: "isPostsState",
+  key: 'isPostsState',
   default: {
-    id: "",
-    categoryId: "",
-    date: "",
-    startDate: "",
-    endDate: "",
-    title: "",
-    thumb: "",
+    id: '',
+    categoryId: '',
+    date: '',
+    startDate: '',
+    endDate: '',
+    title: '',
+    thumb: '',
     cont: {
-      unit: "",
-      optimization: "",
-      percent: "",
+      unit: '',
+      optimization: [''],
+      percent: '',
     },
-    skills: [""],
+    skills: [''],
     view: {
-      code: "",
-      page: "",
+      code: '',
+      page: '',
     },
     num: 0,
-    dec: "",
+    dec: '',
   },
 });

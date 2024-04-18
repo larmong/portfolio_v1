@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { Common } from "@commons/styles/emotion";
+import styled from '@emotion/styled';
+import { Common } from '@commons/styles/emotion';
 
 export const Wrapper = styled.div`
   padding-bottom: 30px;
@@ -9,9 +9,7 @@ export const BoardTab = styled.ul`
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 20px 0;
-  border-bottom: 1px solid #ebeae6;
-  margin-bottom: 20px;
+  padding: 30px 0;
   font-family: ${Common.font.ko};
   text-transform: uppercase;
 
@@ -25,7 +23,7 @@ export const BoardTab = styled.ul`
       color: #fff;
     }
     &:not(:last-of-type)::before {
-      content: "";
+      content: '';
       position: absolute;
       top: calc(50% + 1px);
       transform: translateY(-50%);

@@ -1,4 +1,5 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+import { Default } from '@commons/styles/emotion';
 
 export const TagWrapper = styled.div`
   position: relative;
@@ -14,8 +15,9 @@ export const HoverTag = styled.div`
   padding: 4px 6px;
   border-radius: 4px;
   font-size: 12px;
+  color: ${Default.color};
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -8px;
     left: 0;
