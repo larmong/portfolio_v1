@@ -110,7 +110,7 @@ export const BtnGroup = styled.div`
 `;
 
 export const TextCont = styled.div`
-  border: 1px solid ${Common.color.lightGray};
+  // border: 1px solid ${Common.color.lightGray};
   height: calc(100vh - 685px);
   overflow: hidden;
   color: ${Common.color.lightGray};

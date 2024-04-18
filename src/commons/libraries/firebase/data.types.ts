@@ -1,16 +1,16 @@
 export interface ITypeProject {
   id?: string;
-  categoryId?: string;
-  date?: string;
-  startDate?: string;
-  endDate?: string;
-  title?: string;
-  thumb?: string;
-  cont?: ITypeCont;
-  skills?: string[];
-  view?: ITypeView;
-  num?: number;
-  dec?: string;
+  categoryId: string;
+  date: string;
+  startDate: string;
+  endDate: string;
+  title: string;
+  thumb: string;
+  cont: ITypeCont;
+  skills: string[];
+  view: ITypeView;
+  num: number;
+  dec: string;
 }
 
 export interface ITypeView {
