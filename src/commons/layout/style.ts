@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  opacity: 0.1;
+  //opacity: 0.1;
 `;
 
 export const Page = styled.div`
@@ -30,11 +30,7 @@ export const Page = styled.div`
   }
 
   ${mediaQuery[1]} {
-    section {
-      display: block;
-      min-height: calc(100vh - 170px);
-      height: calc(100% - 50px);
-    }
+    padding-top: 140px;
     footer {
       padding: 10px 0;
       .footer-contact {

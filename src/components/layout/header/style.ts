@@ -74,6 +74,7 @@ export const Gnb = styled.ul`
     }
   }
   ${mediaQuery[2]} {
+    gap: 0;
     justify-content: space-between;
   }
 `;

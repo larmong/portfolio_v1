@@ -1,4 +1,5 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
+import { mediaQuery } from "@commons/styles/mediaQuery";
 
 export const Wrapper = styled.div``;
 
@@ -11,9 +12,8 @@ export const TabContents = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 150px 0;
-
   .text-wrapper {
-    font-family: 'Chosunilbo_myungjo', sans-serif;
+    font-family: "Chosunilbo_myungjo", sans-serif;
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ export const TabContents = styled.div`
 
       &::before,
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 0;
@@ -58,7 +58,6 @@ export const TabContents = styled.div`
       }
     }
   }
-
   .img-wrapper {
     text-align: right;
     width: 35%;
@@ -71,10 +70,39 @@ export const TabContents = styled.div`
       width: 300px;
       height: 300px;
       border: 1px solid rgba(255, 255, 255, 0.5);
+
       img {
         width: 100%;
         height: 100%;
       }
     }
+  }
+
+  ${mediaQuery[1]} {
+    font-size: 16px;
+    line-height: 30px;
+    margin: 20px 0;
+    .text-wrapper {
+      width: 100%;
+      gap: 20px;
+      color: rgba(255, 255, 255, 0.6);
+      em {
+        cursor: inherit;
+        color: rgba(255, 255, 255, 1);
+        &::before,
+        &::after {
+          content: none;
+        }
+        i {
+          opacity: 1;
+        }
+      }
+    }
+    .img-wrapper {
+      display: none;
+    }
+  }
+  ${mediaQuery[2]} {
+    font-size: 14px;
   }
 `;

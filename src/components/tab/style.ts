@@ -1,8 +1,9 @@
-import styled from '@emotion/styled';
-import { IsLengthType } from '@components/tab/type';
+import styled from "@emotion/styled";
+import { IsLengthType } from "@components/tab/type";
+import { mediaQuery } from "@commons/styles/mediaQuery";
 
 export const Wrapper = styled.div`
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   height: 180px;
   display: flex;
   align-items: center;
@@ -16,13 +17,21 @@ export const Wrapper = styled.div`
     color: transparent;
     -webkit-text-stroke: 1px #fff;
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -5px;
       left: 50%;
       width: 140px;
       height: 100px;
-      background: url('/assets/images/detail.png') center center / contain no-repeat;
+      background: url("/assets/images/detail.png") center center / contain
+        no-repeat;
+    }
+  }
+  ${mediaQuery[1]} {
+    height: auto;
+    margin: 0 0 20px 0;
+    h3 {
+      display: none;
     }
   }
 `;
@@ -48,7 +57,7 @@ export const TabWrapper = styled.ul`
     }
     &::before,
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 1px;
@@ -64,7 +73,7 @@ export const TabWrapper = styled.ul`
     }
     &:hover {
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 1px;
@@ -77,6 +86,24 @@ export const TabWrapper = styled.ul`
       &::after {
         width: 100%;
         background: #fff;
+      }
+    }
+  }
+
+  ${mediaQuery[1]} {
+    width: 100%;
+    height: auto;
+    gap: 30px;
+    justify-content: space-between;
+    li {
+      gap: 14px;
+      padding: 20px 0;
+      line-height: 16px;
+      p {
+        font-size: 16px;
+      }
+      span {
+        font-size: 14px;
       }
     }
   }
