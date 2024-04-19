@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import { Common } from '@commons/styles/emotion';
-import { IsModalType } from '@components/modal/type';
+import styled from "@emotion/styled";
+import { Common } from "@commons/styles/emotion";
+import { IsModalType } from "@components/modal/type";
 
 export const Wrapper = styled.div`
   transition: all 0.8s ease;
@@ -9,8 +9,9 @@ export const Wrapper = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: ${(props: IsModalType) => (props.isModal ? '1000' : '-1')};
-  background: ${(props: IsModalType) => (props.isModal ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0)')};
+  z-index: ${(props: IsModalType) => (props.isModal ? "1000" : "-1")};
+  background: ${(props: IsModalType) =>
+    props.isModal ? "rgba(255, 255, 255, 0.25)" : "rgba(255, 255, 255, 0)"};
 `;
 
 export const ModalWrapper = styled.div`
@@ -24,8 +25,10 @@ export const ModalWrapper = styled.div`
   width: 700px;
   height: 100vh;
   padding: 30px;
-  background: url('/assets/images/noise-background.jpg') top center / cover no-repeat;
-  transform: ${(props: IsModalType) => (props.isModal ? 'translateX(0px)' : 'translateX(700px)')};
+  background: url("/assets/images/noise-background.jpg") top center / cover
+    no-repeat;
+  transform: ${(props: IsModalType) =>
+    props.isModal ? "translateX(0px)" : "translateX(700px)"};
   .top-cont {
     display: flex;
     justify-content: space-between;
@@ -111,15 +114,6 @@ export const BtnGroup = styled.div`
 
 export const TextCont = styled.div`
   text-transform: uppercase;
-  // border: 1px solid ${Common.color.lightGray};
-  // height: calc(100vh - 685px);
-  // overflow: hidden;
-  // color: ${Common.color.lightGray};
-  // font-family: ${Common.font.ko};
-  // line-height: 26px;
-  // overflow-y: auto;
-  // padding: 10px 14px;
-
   ul {
     display: flex;
     flex-direction: column;
@@ -135,7 +129,7 @@ export const TextCont = styled.div`
           position: relative;
 
           &:not(:last-of-type)::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 50%;
             transform: translateY(-50%);

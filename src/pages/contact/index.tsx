@@ -32,8 +32,8 @@ export default function Contact() {
   return (
     <Wrapper>
       <div className="container">
-        {menuList.map((menu) => (
-          <Menu>
+        {menuList.map((menu, idx: number) => (
+          <Menu key={`${menu}_${idx}`}>
             <IconBox
               className={
                 menu.name === "tistory"

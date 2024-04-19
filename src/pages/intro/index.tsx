@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-import { IntroCont, Wrapper } from '@pages/intro/style';
+import { IntroCont, Wrapper } from "@pages/intro/style";
 
 export default function Intro() {
   const imageRef = useRef<any>(null);
@@ -36,8 +36,12 @@ export default function Intro() {
           autoAlpha: 1,
           duration: 1,
           onComplete: () => {
-            const titles = gsap.utils.toArray(titleRef.current?.children) as HTMLElement[];
-            const texts = gsap.utils.toArray(dscRef.current?.children) as HTMLElement[];
+            const titles = gsap.utils.toArray(
+              titleRef.current?.children
+            ) as HTMLElement[];
+            const texts = gsap.utils.toArray(
+              dscRef.current?.children
+            ) as HTMLElement[];
 
             titles?.forEach((title, idx) => {
               gsap.fromTo(
@@ -102,7 +106,11 @@ export default function Intro() {
             </div>
             <div ref={dscRef} className="intro-dsc">
               <span>안녕하세요😊 :)</span>
-              <span>사용자 중심의 웹을 만들기 위해 노력하는 프론트엔드 이아름입니다.</span>
+              <span>
+                사용자 중심의 웹을 만들기 위해 노력하는{" "}
+                <br className="display-m" />
+                프론트엔드 이아름입니다.
+              </span>
               <span>larmong portfolio 2024.ver</span>
             </div>
           </div>

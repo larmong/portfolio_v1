@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import { Common, Default } from "./emotion";
+import { mediaQuery } from "@commons/styles/mediaQuery";
 
 export const GlobalStyle = css`
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
@@ -80,5 +81,21 @@ export const GlobalStyle = css`
   .container {
     width: 1400px;
     margin: 0 auto;
+    ${mediaQuery[0]} {
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+  .display-pc {
+    display: block;
+    ${mediaQuery[1]} {
+      display: none;
+    }
+  }
+  .display-m {
+    display: none;
+    ${mediaQuery[1]} {
+      display: block;
+    }
   }
 `;
