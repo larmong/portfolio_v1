@@ -23,6 +23,7 @@ export const HistoryCont = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
+
 export const History = styled.div`
   display: flex;
   padding: 40px 0;
@@ -31,10 +32,12 @@ export const History = styled.div`
     flex-direction: column;
     gap: 4px;
     width: 20%;
+
     span {
       opacity: 0.6;
       margin-bottom: 10px;
     }
+
     p {
       font-size: 20px;
       font-weight: bold;
@@ -47,28 +50,101 @@ export const History = styled.div`
     font-family: ${Common.font.ko};
     width: 80%;
     gap: 20px;
+
     li {
       display: flex;
       justify-content: space-between;
+
       .history-img {
         width: 300px;
+
         img {
           width: 100%;
         }
       }
+
       span {
         width: calc(100% - 340px);
         display: flex;
         flex-direction: column;
         gap: 10px;
+
         em {
           display: block;
           font-weight: bold;
         }
+
         i {
           opacity: 0.6;
           margin-top: 10px;
           line-height: 26px;
+        }
+      }
+    }
+  }
+
+  ${mediaQuery[1]} {
+    padding: 20px 0;
+    flex-direction: column;
+    gap: 20px;
+    .history-head {
+      gap: 10px;
+      width: 100%;
+      font-size: 14px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      span {
+        width: 100%;
+        margin-bottom: 0;
+      }
+      p {
+        position: relative;
+        font-size: 14px;
+        letter-spacing: normal;
+        padding-right: 14px;
+        &::before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 10px;
+          background: rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+    .history-body {
+      width: 100%;
+      li {
+        font-size: 14px;
+        .history-img {
+          width: 220px;
+        }
+        span {
+          width: calc(100% - 240px);
+          gap: 10px;
+          i {
+            margin-top: 0;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  ${mediaQuery[2]} {
+    .history-body {
+      li {
+        flex-direction: column;
+        gap: 20px;
+        margin: 10px 0;
+        .history-img {
+          width: 100%;
+        }
+        span {
+          width: 100%;
+          gap: 10px;
         }
       }
     }

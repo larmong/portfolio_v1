@@ -67,7 +67,7 @@ export default function Profile() {
                   <i>
                     React.js를 사용하여 대한양궁협회의 클라이언트, 어드민 웹사이트 2차 개발 및 유지보수를
                     담당하였습니다.
-                    <br />
+                    <br className="display-pc" />
                     Redux Toolkit, Recoil, styled-components를 사용한 프로젝트입니다.
                   </i>
                 </span>
@@ -83,7 +83,7 @@ export default function Profile() {
                   <em>◆ 현대 JAPAN 이노션</em>
                   <i>
                     javascript를 이용한 스태틱 페이지와 모션이 많은 차량 이벤트 페이지 제작을 담당하였습니다.
-                    <br />
+                    <br className="display-pc" />
                     javascript와 gsap 라이브러리 등 다양한 라이브러리를 사용하여 인터랙티브 웹을 만들어 볼 수 있는
                     프로젝트였습니다.
                   </i>
@@ -101,7 +101,7 @@ export default function Profile() {
                   <i>
                     javascript를 이용하여 운세 이벤트, 행운의 편지, 로또 이벤트 등 다양한 미니 게임 이벤트 페이지를
                     제작하였습니다.
-                    <br />
+                    <br className="display-pc" />
                     실제 사용자가 이벤트를 참여하는 과정을 실시간으로 확인할 수 있었고, 백엔드와 소통하며 다양한 API를
                     활용하여 로직을 만들고, QA를 통해 다양한 이슈를 해결하였습니다.
                   </i>
