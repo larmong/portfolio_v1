@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  //opacity: 0.1;
+  opacity: 0.1;
 `;
 
 export const Page = styled.div`
