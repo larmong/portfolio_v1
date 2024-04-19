@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import { Common, Default } from "@commons/styles/emotion";
+import { Common } from "@commons/styles/emotion";
+import { mediaQuery } from "@commons/styles/mediaQuery";
 
 export const Wrapper = styled.div`
   color: ${Common.color.lightGray};
@@ -11,10 +12,23 @@ export const BoardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 60px 20px;
+  ${mediaQuery[1]} {
+    gap: 40px 20px;
+  }
 `;
 
 export const CardWrapper = styled.div`
   width: calc(20% - 16px);
+
+  ${mediaQuery[0]} {
+    width: calc(33.33% - 14px);
+  }
+  ${mediaQuery[1]} {
+    width: calc(33.33% - 14px);
+  }
+  ${mediaQuery[2]} {
+    width: 100%;
+  }
 `;
 
 export const PaginationWrapper = styled.div`

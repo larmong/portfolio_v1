@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useSetRecoilState } from "recoil";
 
 import { isModalState, isPostsState } from "@store/store";
@@ -6,6 +6,7 @@ import { ICardProps } from "@components/card/type";
 import { ITypeProject } from "@commons/libraries/firebase/data.types";
 import { Wrapper } from "@components/card/style";
 import TagIcon from "@components/tag";
+import useResizeHandler from "@commons/hooks/resize";
 
 export default function Card({ post }: ICardProps) {
   const cardRef = useRef<HTMLDivElement | null>(null);
@@ -18,11 +19,19 @@ export default function Card({ post }: ICardProps) {
     setIsModal(true);
   };
 
-  useEffect(() => {
+  const handleResize = () => {
     if (cardRef.current) {
       setCardWidth(cardRef.current?.clientWidth);
     }
-  }, [cardRef.current]);
+  };
+
+  useResizeHandler(handleResize);
+
+  useLayoutEffect(() => {
+    if (cardRef.current) {
+      setCardWidth(cardRef.current?.clientWidth);
+    }
+  }, []);
 
   return (
     <Wrapper ref={cardRef}>

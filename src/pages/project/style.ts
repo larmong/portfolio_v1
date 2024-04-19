@@ -1,5 +1,6 @@
-import styled from '@emotion/styled';
-import { Common } from '@commons/styles/emotion';
+import styled from "@emotion/styled";
+import { Common } from "@commons/styles/emotion";
+import { mediaQuery } from "@commons/styles/mediaQuery";
 
 export const Wrapper = styled.div`
   padding-bottom: 30px;
@@ -12,7 +13,6 @@ export const BoardTab = styled.ul`
   padding: 30px 0;
   font-family: ${Common.font.ko};
   text-transform: uppercase;
-
   li {
     display: inline-block;
     position: relative;
@@ -23,7 +23,7 @@ export const BoardTab = styled.ul`
       color: #fff;
     }
     &:not(:last-of-type)::before {
-      content: '';
+      content: "";
       position: absolute;
       top: calc(50% + 1px);
       transform: translateY(-50%);
@@ -31,6 +31,17 @@ export const BoardTab = styled.ul`
       width: 1px;
       height: 10px;
       background: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  ${mediaQuery[1]} {
+    gap: 20px;
+    padding: 20px 0;
+    font-size: 14px;
+    li {
+      &:not(:last-of-type)::before {
+        right: -10px;
+      }
     }
   }
 `;

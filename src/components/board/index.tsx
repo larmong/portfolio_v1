@@ -3,6 +3,7 @@ import { useRecoilValue } from "recoil";
 import { Pagination, Empty } from "antd";
 
 import { ITypeProject } from "@commons/libraries/firebase/data.types";
+import { breakpoints } from "@commons/styles/mediaQuery";
 import { isPostDataState } from "@store/store";
 import {
   BoardWrapper,
@@ -11,11 +12,12 @@ import {
   Wrapper,
 } from "@components/board/style";
 import Card from "@components/card";
+import useResizeHandler from "@commons/hooks/resize";
 
 export default function Board() {
   const isPostData = useRecoilValue(isPostDataState);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(10);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -24,6 +26,20 @@ export default function Board() {
       behavior: "smooth",
     });
   };
+
+  const handleResize = () => {
+    let width = window.innerWidth;
+
+    if (width >= Number(breakpoints[1])) {
+      setPageSize(10);
+    } else if (width >= Number(breakpoints[2])) {
+      setPageSize(6);
+    } else {
+      setPageSize(5);
+    }
+  };
+
+  useResizeHandler(handleResize);
 
   return (
     <Wrapper>
