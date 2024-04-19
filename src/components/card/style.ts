@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
   gap: 14px;
   font-size: 14px;
   .img-wrapper {
-    transition: all 0.2s ease;
     width: 100%;
     cursor: pointer;
     border: 1px solid ${Common.color.lightGray};
@@ -46,8 +45,8 @@ export const Wrapper = styled.div`
   ${mediaQuery[1]} {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    font-size: 12px;
+    gap: 10px;
+    font-size: 14px;
     .text-wrapper {
       gap: 6px;
       p {
@@ -55,7 +54,15 @@ export const Wrapper = styled.div`
       }
       ul {
         margin-top: 4px;
-        gap: 4px;
+      }
+    }
+  }
+  ${mediaQuery[2]} {
+    padding-bottom: 20px;
+    .text-wrapper {
+      text-align: center;
+      ul {
+        justify-content: center;
       }
     }
   }

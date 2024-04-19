@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { Pagination, Empty } from "antd";
 
@@ -40,6 +40,10 @@ export default function Board() {
   };
 
   useResizeHandler(handleResize);
+
+  useEffect(() => {
+    handleResize();
+  });
 
   return (
     <Wrapper>

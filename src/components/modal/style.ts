@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Common } from "@commons/styles/emotion";
 import { IsModalType } from "@components/modal/type";
+import { mediaQuery } from "@commons/styles/mediaQuery";
 
 export const Wrapper = styled.div`
   transition: all 0.8s ease;
@@ -38,6 +39,19 @@ export const ModalWrapper = styled.div`
     flex-direction: column;
     gap: 30px;
   }
+
+  ${mediaQuery[1]} {
+     {
+      gap: 20px;
+      width: 100vw;
+      padding: 20px;
+      transform: ${(props: IsModalType) =>
+        props.isModal ? "translateX(0px)" : "translateX(100vw)"};
+      .bottom-cont {
+        gap: 20px;
+      }
+    }
+  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -59,6 +73,15 @@ export const TitleWrapper = styled.div`
     color: ${Common.color.lightGray};
     font-family: ${Common.font.ko};
   }
+
+  ${mediaQuery[1]} {
+    width: calc(100% - 60px);
+    font-size: 14px;
+    gap: 6px;
+    p {
+      font-size: 14px;
+    }
+  }
 `;
 
 export const CloseBtn = styled.div`
@@ -76,12 +99,30 @@ export const CloseBtn = styled.div`
     height: 25px;
     color: ${Common.color.lightGray};
   }
+
+  ${mediaQuery[1]} {
+    margin-top: 5px;
+    width: 28px;
+    height: 28px;
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
 `;
 
 export const ImgBox = styled.div`
   width: 100%;
   height: 400px;
   border: 1px solid ${Common.color.lightGray};
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  ${mediaQuery[1]} {
+    height: 30vh;
+    background-position: top center;
+  }
 `;
 
 export const TagGroup = styled.ul`
@@ -108,6 +149,18 @@ export const BtnGroup = styled.div`
     span {
       display: inline-block;
       margin-left: 5px;
+    }
+  }
+
+  ${mediaQuery[1]} {
+    gap: 12px;
+    height: 34px;
+    > div {
+      font-size: 12px;
+      span {
+        display: inline-block;
+        margin-left: 5px;
+      }
     }
   }
 `;
@@ -144,6 +197,18 @@ export const TextCont = styled.div`
         text-align: center;
         margin-top: 20px;
         line-height: 24px;
+      }
+    }
+  }
+
+  ${mediaQuery[1]} {
+    ul {
+      gap: 10px;
+      li {
+        font-size: 13px;
+        &.dec {
+          margin-top: 10px;
+        }
       }
     }
   }

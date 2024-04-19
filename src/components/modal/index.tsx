@@ -1,5 +1,5 @@
 import { useRecoilState, useRecoilValue } from "recoil";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import { RiPagesFill } from "react-icons/ri";
@@ -34,6 +34,14 @@ export default function Modal() {
     }
   };
 
+  useEffect(() => {
+    if (isModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isModal]);
+
   return (
     <Wrapper ref={modalRef} isModal={isModal} onClick={handleCloseModal}>
       <ModalWrapper isModal={isModal}>
@@ -53,7 +61,7 @@ export default function Modal() {
         <div className="center-cont">
           <ImgBox
             style={{
-              background: `url('${isPost?.thumb}')center center / cover no-repeat`,
+              backgroundImage: `url('${isPost?.thumb}')`,
             }}
           ></ImgBox>
         </div>
@@ -93,7 +101,9 @@ export default function Modal() {
               </li>
               <li>{isPost?.cont.percent}</li>
               <li>
-                {isPost?.startDate} ~ {isPost?.endDate}
+                {isPost?.startDate === isPost?.endDate
+                  ? isPost?.startDate
+                  : `${isPost?.startDate} ~ ${isPost?.endDate}`}
               </li>
               <li>{isPost.cont.unit}</li>
               <li className="dec">{isPost?.dec}</li>

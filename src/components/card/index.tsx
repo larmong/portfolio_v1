@@ -30,6 +30,7 @@ export default function Card({ post }: ICardProps) {
   useLayoutEffect(() => {
     if (cardRef.current) {
       setCardWidth(cardRef.current?.clientWidth);
+      cardRef.current?.style.setProperty("transition", "all 0.2s ease");
     }
   }, []);
 

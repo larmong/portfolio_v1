@@ -59,4 +59,7 @@ export const PaginationWrapper = styled.div`
       }
     }
   }
+  ${mediaQuery[1]} {
+    padding-top: 40px;
+  }
 `;
