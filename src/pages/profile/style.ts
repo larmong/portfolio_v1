@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { Common } from "@commons/styles/emotion";
-import { mediaQuery } from "@commons/styles/mediaQuery";
+import styled from '@emotion/styled';
+import { Common } from '@commons/styles/emotion';
+import { mediaQuery } from '@commons/styles/mediaQuery';
 
 export const Wrapper = styled.div`
   color: ${Common.color.lightGray};
@@ -15,6 +15,63 @@ export const TopCont = styled.div`
   ${mediaQuery[1]} {
     padding: 40px 0 60px 0;
     gap: 40px;
+  }
+`;
+
+export const HistoryCont = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+export const History = styled.div`
+  display: flex;
+  padding: 40px 0;
+  .history-head {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 20%;
+    span {
+      opacity: 0.6;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1.6px;
+    }
+  }
+  .history-body {
+    display: flex;
+    flex-direction: column;
+    font-family: ${Common.font.ko};
+    width: 80%;
+    gap: 20px;
+    li {
+      display: flex;
+      justify-content: space-between;
+      .history-img {
+        width: 300px;
+        img {
+          width: 100%;
+        }
+      }
+      span {
+        width: calc(100% - 340px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        em {
+          display: block;
+          font-weight: bold;
+        }
+        i {
+          opacity: 0.6;
+          margin-top: 10px;
+          line-height: 26px;
+        }
+      }
+    }
   }
 `;
 
