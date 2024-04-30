@@ -1,20 +1,5 @@
-import {
-  Hand,
-  List,
-  TopCont,
-  ProfileCont,
-  ProfileWrapper,
-  Stacks,
-  StacksContainer,
-  StacksWrapper,
-  Title,
-  Wrapper,
-  HistoryCont,
-  History,
-} from '@pages/profile/style';
-import { BsCheck2Square, BsCodeSlash } from 'react-icons/bs';
-import { PiCertificateBold } from 'react-icons/pi';
-import { MdHistory, MdSchool } from 'react-icons/md';
+import { Hand, List, TopCont, Title, Wrapper, HistoryCont, History } from '@pages/profile/style';
+import { BsCheck2Square } from 'react-icons/bs';
 
 export default function Profile() {
   const handleMoveToLink = (url: string) => () => {
