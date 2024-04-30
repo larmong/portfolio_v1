@@ -132,7 +132,7 @@ export default function Profile() {
           </History>
           <History>
             <div className="history-head">
-              <span>2022.02 ~ 2022.05</span>
+              <span>2021.10 ~ 2022.04</span>
               <p>히포케이메논</p>
             </div>
             <ul className="history-body">
