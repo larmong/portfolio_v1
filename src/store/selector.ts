@@ -1,12 +1,8 @@
-import { selector } from "recoil";
-import { v4 as uuidv4 } from "uuid";
+import { selector } from 'recoil';
+import { v4 as uuidv4 } from 'uuid';
 
-import { ITypeProject } from "@commons/libraries/firebase/data.types";
-import {
-  getPostDataState,
-  isPostDataState,
-  projectCategoryState,
-} from "@store/store";
+import { ITypeProject } from '@commons/libraries/firebase/data.types';
+import { getPostDataState, isPostDataState, projectCategoryState } from '@store/store';
 
 export const filterIsPostDataState = selector<ITypeProject[] | []>({
   key: `filterIsPostDataState_${uuidv4()}`,
@@ -16,15 +12,11 @@ export const filterIsPostDataState = selector<ITypeProject[] | []>({
     let filterData;
 
     switch (category) {
-      case "statics":
-        filterData = data.filter(
-          (post: ITypeProject) => post.categoryId === "statics"
-        );
+      case 'static':
+        filterData = data.filter((post: ITypeProject) => post.categoryId === 'static');
         return filterData;
-      case "react":
-        filterData = data.filter(
-          (post: ITypeProject) => post.categoryId === "react"
-        );
+      case 'react':
+        filterData = data.filter((post: ITypeProject) => post.categoryId === 'react');
         return filterData;
       default:
         return data;
