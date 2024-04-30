@@ -61,6 +61,9 @@ export const History = styled.div`
         img {
           width: 100%;
         }
+        &.link {
+          cursor: pointer;
+        }
       }
 
       span {
