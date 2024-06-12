@@ -18,6 +18,9 @@ export const filterIsPostDataState = selector<ITypeProject[] | []>({
       case 'react':
         filterData = data.filter((post: ITypeProject) => post.categoryId === 'react');
         return filterData;
+      case 'django':
+        filterData = data.filter((post: ITypeProject) => post.categoryId === 'django');
+        return filterData;
       default:
         return data;
     }

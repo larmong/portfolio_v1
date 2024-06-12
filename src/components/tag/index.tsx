@@ -309,6 +309,22 @@ const TagIcon = ({ tag }: { tag: string }) => {
           <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
         </TagWrapper>
       );
+    case "django":
+      return (
+        <TagWrapper>
+          <img
+            onMouseEnter={onMouseHover("enter")}
+            onMouseLeave={onMouseHover("leave")}
+            style={{
+              height: "22px",
+              border: "1px solid rgb(255 255 255 / 20%)",
+            }}
+            src="https://images.velog.io/images/holawan/post/9427732e-ffeb-438f-8425-d0e94b949dcd/django.png"
+            alt="django"
+          />
+          <HoverTag ref={useHover}>{tag.toUpperCase()}</HoverTag>
+        </TagWrapper>
+      );
     default:
       return "";
   }

@@ -15,7 +15,7 @@ export default function Project() {
   const [category, setCategory] = useRecoilState<string>(projectCategoryState);
   const filterData = useRecoilValue<ITypeProject[] | []>(filterIsPostDataState);
   const setIsPostData = useSetRecoilState<ITypeProject[] | []>(isPostDataState);
-  const tabList = ['all', 'static', 'react'];
+  const tabList = ['all', 'static', 'react', 'django'];
 
   useEffect(() => {
     if (data.length === 0) {
