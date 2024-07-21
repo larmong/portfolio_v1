@@ -38,7 +38,7 @@ export default function Profile() {
         <HistoryCont>
           <History>
             <div className="history-head">
-              <span>2023.09 ~ ing</span>
+              <span>2023.09 ~ 2024.05</span>
               <p>아이엠폼</p>
             </div>
             <ul className="history-body">
